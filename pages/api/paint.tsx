@@ -12,7 +12,7 @@ export default async function handler(
     auth: process.env.REPLICATE_API_TOKEN,
   });
   const model =
-    "prompthero/openjourney:9936c2001faa2194a261c01381f90e65261879985476014a0a37a334593a05eb";
+    "tstramer/midjourney-diffusion:436b051ebd8f68d23e83d22de5e198e0995357afef113768c20f0b6fcef23c8b";
   const input = {
     prompt: req.body.key.response,
   };

@@ -39,15 +39,18 @@ function Botez() {
       </div>
 
       {aiName !== "" && aiPicture !== null ? (
-        <div>
-          <div className="w-full relative aspect-square">
-            <Image
-              fill
-              src={aiPicture}
-              alt="ai image of itself"
-              sizes="100vw"
-            />
-          </div>
+        <div className="flex flex-col">
+          {aiPicture && (
+            <div className="w-full relative aspect-square self-center rounded-lg animate-pulse">
+              <Image
+                fill
+                src={aiPicture}
+                alt="ai image of itself"
+                sizes="50vw"
+                className="rounded-lg"
+              />
+            </div>
+          )}
 
           <div className="text-white text-lg px-1 opacity-80">{aiName}</div>
         </div>
