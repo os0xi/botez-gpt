@@ -22,7 +22,7 @@ export default async function handler(
   console.log({ res4 });
  res4 = await chain.call({
     input:
-      "Compassionate Human speaks: Translate your previous answer in Romanian. Use emojis",
+      "the same Human speaks: Translate your previous answer in Romanian. Use emojis",
   });
   console.log({ res4 });
 

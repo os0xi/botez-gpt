@@ -46,7 +46,7 @@ function Botez(props: Props) {
         Ajuta pe ChatGPT sa isi aleaga un nume
       </div>
       {aiName !== "" ? (
-        <div className="text-xl text-white mt-2 text-xs sm:text-sm md:text-base lg:text-lg">
+        <div className="text-xl text-white mt-2 sm:text-sm md:text-base lg:text-lg">
           {aiName}
         </div>
       ) : (
