@@ -1,17 +1,19 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 // type Props = {};
 
 function Botez() {
   const [aiName, setAiName] = useState("");
+  const [aiPicture, setAiPicture] = useState(null);
   const [loading, setLoading] = useState(false);
   async function getAnswer() {
     setLoading(true);
     const aiRes = await fetch("./api/hello");
     const aiName = await aiRes.json();
     setAiName(aiName.name);
+    setAiPicture(aiName.url);
     setLoading(false);
-    console.log(aiName.name);
   }
 
   // function splitText(str: string) {
@@ -35,8 +37,20 @@ function Botez() {
       <div className="text-2xl bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-blue-500 opacity-70 ">
         Ajuta pe ChatGPT sa isi aleaga un nume
       </div>
-      {aiName !== "" ? (
-        <div className="text-white text-lg px-1 opacity-80">{aiName}</div>
+
+      {aiName !== "" && aiPicture !== null ? (
+        <div>
+          <div className="w-full relative aspect-square">
+            <Image
+              fill
+              src={aiPicture}
+              alt="ai image of itself"
+              sizes="100vw"
+            />
+          </div>
+
+          <div className="text-white text-lg px-1 opacity-80">{aiName}</div>
+        </div>
       ) : (
         <></>
       )}

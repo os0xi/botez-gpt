@@ -698,6 +698,13 @@ chalk@^4.0.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
+chiaki@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/chiaki/-/chiaki-2.0.0.tgz#2fa2b4f3d1ff9ba87ee3860128053d62245afc1e"
+  integrity sha512-XCLb713fLcGC4hFG+3Fn9n80jws7vJsaF0TEOBp59OvtCRK7S+0UF4+DCvcSvs51M/dj2IHzn0667jd5MPb5oQ==
+  dependencies:
+    unstreamify "^2.0.0"
+
 chokidar@^3.5.3:
   version "3.5.3"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.5.3.tgz#1cf37c8707b932bd1af1ae22c0432e2acd1903bd"
@@ -1936,6 +1943,13 @@ micromatch@^4.0.4, micromatch@^4.0.5:
     braces "^3.0.2"
     picomatch "^2.3.1"
 
+midjourney-client@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/midjourney-client/-/midjourney-client-1.0.8.tgz#2bd5aee7c120389bfaaabd12a4bc35443152ac19"
+  integrity sha512-MXrC11oJynraOmC2stpyNQlKGTayof4gqzHGogwKj+KRvulzSYLt+qKKYoajvzzF2gsYk2XjyjF91BL1T93S2w==
+  dependencies:
+    node-replicate "^2.0.0"
+
 mime-db@1.52.0:
   version "1.52.0"
   resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.52.0.tgz#bbabcdc02859f4987301c856e3387ce5ec43bf70"
@@ -2022,6 +2036,13 @@ node-releases@^2.0.8:
   version "2.0.10"
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.10.tgz#c311ebae3b6a148c89b1813fd7c4d3c024ef537f"
   integrity sha512-5GFldHPXVG/YZmFzJvKK2zDSzPKhEp0+ZR5SVaoSag9fsL5YgHbUHDfnG5494ISANDcK4KwPXAx2xqVEydmd7w==
+
+node-replicate@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/node-replicate/-/node-replicate-2.0.0.tgz#227eccabdc52fd7e02a5d35d194f76700de75c44"
+  integrity sha512-vJ8wDLpDh+zEznpTgRdO52+JG5g/mEaon0y9DTkvfMwZ16XjuxnCUGpfS9P8Oea3VXH1+bZJ++a/NzjPhN6QaA==
+  dependencies:
+    chiaki "^2.0.0"
 
 normalize-path@^3.0.0, normalize-path@~3.0.0:
   version "3.0.0"
@@ -2376,6 +2397,11 @@ regexp.prototype.flags@^1.4.3:
     call-bind "^1.0.2"
     define-properties "^1.1.3"
     functions-have-names "^1.2.2"
+
+replicate@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/replicate/-/replicate-0.9.0.tgz#7175cfca61dcd2b3462183647c8e462468c47dcd"
+  integrity sha512-UZ9Nz8z4GnXvWSFWvexW+rEp7s9lQZvkHEsLsPCmIPqt2B/uLQ5F7vC69d75ADWe6TK4XXZgL/Ru/tZVza6Img==
 
 resolve-from@^4.0.0:
   version "4.0.0"
@@ -2756,6 +2782,11 @@ unbox-primitive@^1.0.2:
     has-bigints "^1.0.2"
     has-symbols "^1.0.3"
     which-boxed-primitive "^1.0.2"
+
+unstreamify@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/unstreamify/-/unstreamify-2.0.0.tgz#fad10842cde15a386fa5b590fb465c622ede7ba8"
+  integrity sha512-u4UWtoJglG5dlinKPrr0cdGOL9eGozILn1EmzQ0oforHVM+M/WB8ibwwlEQlbTYMDMIJe6TK/sbVN5WS7ePOxA==
 
 update-browserslist-db@^1.0.10:
   version "1.0.10"
