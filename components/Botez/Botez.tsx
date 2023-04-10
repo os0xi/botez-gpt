@@ -26,7 +26,7 @@ function Botez() {
   console.log();
   return (
     <div className="flex items-start justify-start flex-col gap-2 bg-transparent max-w-2xl p-2">
-      {!aiName && <div className="text-8xl dark:text-white mb-2">Botez</div>}
+      {!aiName && <div className="text-8xl dark:text-white mb-2">Boteaza</div>}
       {aiName && (
         <div className="text-5xl text-white opacity-90  mb-2 font-bold">
           Boteaza

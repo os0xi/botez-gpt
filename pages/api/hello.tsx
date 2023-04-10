@@ -11,7 +11,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const model = new OpenAI({ openAIApiKey:process.env.OPENAI_API_KEY, temperature: 0.9,maxTokens:3800 });
+  const model = new OpenAI({ openAIApiKey:process.env.OPENAI_API_KEY, temperature: 0.9,maxTokens:2800 });
 
   const chain = new ConversationChain({ llm: model });
   console.log(req);
