@@ -34,19 +34,18 @@ function Botez(props: Props) {
   }
 
   return (
-    <div className="flex items-start justify-start flex-col gap-2 bg-black max-w-2xl">
-      <div className="text-xs sm:text-sm md:text-base lg:text-lg dark:text-white mb-2">
-        Bo
-        <span className="animate-bounce transition delay-150 duration-300 ease-in-out">
-          t
-        </span>
-        ez
-      </div>
-      <div className="text-xs sm:text-sm md:text-base lg:text-lg bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-blue-500 opacity-70">
+    <div className="flex items-start justify-start flex-col gap-2 bg-black max-w-2xl p-2">
+      {!aiName && <div className="text-8xl dark:text-white mb-2">
+        Botez
+      </div>}
+      {aiName && <div className="text-5xl text-white opacity-90  mb-2 font-bold">
+        Botez
+      </div>}
+      <div className="text-2xl bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-blue-500 opacity-70 ">
         Ajuta pe ChatGPT sa isi aleaga un nume
       </div>
       {aiName !== "" ? (
-        <div className="text-xl text-white mt-2 sm:text-sm md:text-base lg:text-lg">
+        <div className="text-white mt-2 sm:text-sm md:text-base lg:text-lg">
           {aiName}
         </div>
       ) : (
@@ -57,7 +56,6 @@ function Botez(props: Props) {
           disabled={loading}
           className="disabled:bg-green-50  bg-clip-border bg-gradient-to-r from-teal-400 to-blue-400 
           opacity-40 animate-pulse px-6 py-2 rounded-sm text-slate-200"
-
           onClick={getAnswer}
         >
           {!loading && !aiName ? "Boteaza" : !loading && "rebot"}
