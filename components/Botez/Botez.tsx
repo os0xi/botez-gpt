@@ -45,7 +45,7 @@ function Botez(props: Props) {
         Ajuta pe ChatGPT sa isi aleaga un nume
       </div>
       {aiName !== "" ? (
-        <div className="text-white mt-2 sm:text-sm md:text-base lg:text-lg">
+        <div className="text-white text-lg px-1 opacity-80">
           {aiName}
         </div>
       ) : (
@@ -55,7 +55,7 @@ function Botez(props: Props) {
         <button
           disabled={loading}
           className="disabled:bg-green-50  bg-clip-border bg-gradient-to-r from-teal-400 to-blue-400 
-          opacity-40 animate-pulse px-6 py-2 rounded-sm text-slate-200"
+          animate-pulse px-6 py-2 rounded-sm text-slate-200"
           onClick={getAnswer}
         >
           {!loading && !aiName ? "Boteaza" : !loading && "rebot"}
