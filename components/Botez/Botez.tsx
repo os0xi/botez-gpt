@@ -51,11 +51,11 @@ function Botez(props: Props) {
       ) : (
         <></>
       )}
-      <div className="flex justify-center text-white font-bold my-4">
+      <div className="flex justify-center text-white font-bold my-4 self-end mr-2">
         <button
           disabled={loading}
           className="disabled:bg-green-50  bg-clip-border bg-gradient-to-r from-teal-400 to-blue-400 
-          animate-pulse px-6 py-2 rounded-sm text-slate-200"
+          animate-pulse px-6 py-2 rounded-sm text-slate-200 self-end"
           onClick={getAnswer}
         >
           {!loading && !aiName ? "Boteaza" : !loading && "rebot"}
