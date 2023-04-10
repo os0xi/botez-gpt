@@ -23,7 +23,7 @@ function Botez() {
   //
   //   return [before, end, after];
   // }
-
+  console.log();
   return (
     <div className="flex items-start justify-start flex-col gap-2 bg-transparent max-w-2xl p-2">
       {!aiName && <div className="text-8xl dark:text-white mb-2">Botez</div>}
@@ -47,7 +47,7 @@ function Botez() {
           animate-pulse px-6 py-2 rounded-sm text-slate-200 self-end"
           onClick={getAnswer}
         >
-          {!loading && !aiName ? "Boteaza" : !loading && "boteaza"}
+          {!loading && !aiName ? "Botez" : !loading && "botez"}
           {loading && (
             <div className="animate-spin text-black viewBox='0 0 24 24'">߷</div>
           )}
