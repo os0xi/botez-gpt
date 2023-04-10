@@ -1,6 +1,6 @@
 {
   "functions": {
-    "api/hello.tsx": {
+    "api/*": {
       "maxDuration": 10
     }
   }
