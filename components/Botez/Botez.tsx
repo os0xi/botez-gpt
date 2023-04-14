@@ -76,7 +76,7 @@ function Botez() {
       {aiName !== "" && aiPicture !== null ? (
         <div className="flex flex-col" ref={imageRef}>
           {aiPicture && (
-            <div className="w-full relative aspect-square self-center rounded-lg animate-pulse">
+            <div className={`w-full relative aspect-square self-center rounded-lg ${loading?"animate-pulse":''}`}>
               <Image
                 fill
                 src={aiPicture}
@@ -86,7 +86,7 @@ function Botez() {
               />
             </div>
           )}
-          <div className="text-slate-400 text-sm px-2 opacity-30 italic bg-gray-900 rounded-lg my-2 ">
+          <div className="text-yellow-500 text-sm p-4  opacity-80 italic bg-gray-900 rounded-lg my-2 ">
             {aiImageDescription}
           </div>
           <div className="text-white text-lg px-1 opacity-80">{aiName}</div>{" "}
