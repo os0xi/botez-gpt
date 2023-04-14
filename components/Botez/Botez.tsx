@@ -14,9 +14,9 @@ function Botez() {
       return;
     }
     const data = {
-      title: "MDN",
-      text: "Learn web development on MDN!",
-      url: "https://developer.mozilla.org",
+      title: "Botez autogenerativ",
+      text: "#botezai",
+      url: "https://botezai.vercel.app",
       files: [
         new File([newFile], "nuzlocke.png", {
           type: newFile.type,
