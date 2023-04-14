@@ -18,7 +18,7 @@ function Botez() {
       text: "#botezai",
       url: "https://botezai.vercel.app",
       files: [
-        new File([newFile], "nuzlocke.png", {
+        new File([newFile], "ainamed.png", {
           type: newFile.type,
         }),
       ],
@@ -86,7 +86,7 @@ function Botez() {
               />
             </div>
           )}
-          <div className="text-yellow-500 text-sm p-4  opacity-80 italic bg-gray-900 rounded-lg my-2 ">
+          <div className={`text-yellow-500 text-sm p-4  opacity-80 italic bg-gray-900 rounded-lg my-2 ${loading?"animate-pulse":''}`}>
             {aiImageDescription}
           </div>
           <div className="text-white text-lg px-1 opacity-80">{aiName}</div>{" "}
