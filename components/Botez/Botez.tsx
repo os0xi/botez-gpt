@@ -39,12 +39,15 @@ function Botez() {
   const [aiName, setAiName] = useState("");
   const [aiPicture, setAiPicture] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [aiImageDescription, setAiImageDescription] = useState("");
   async function getAnswer() {
     setLoading(true);
     const aiRes = await fetch("./api/hello");
     const aiName = await aiRes.json();
+    console.log(aiName);
     setAiName(aiName.name);
     setAiPicture(aiName.url);
+    setAiImageDescription(aiName.imgDescription);
     setLoading(false);
   }
 
@@ -83,8 +86,10 @@ function Botez() {
               />
             </div>
           )}
-
-          <div className="text-white text-lg px-1 opacity-80">{aiName}</div>
+          <div className="text-slate-400 text-sm px-2 opacity-30 italic bg-gray-900 rounded-lg my-2 ">
+            {aiImageDescription}
+          </div>
+          <div className="text-white text-lg px-1 opacity-80">{aiName}</div>{" "}
         </div>
       ) : (
         <></>

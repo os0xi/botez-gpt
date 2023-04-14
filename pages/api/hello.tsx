@@ -1,4 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
 import { BufferMemory } from "langchain/memory";
 import { OpenAI } from "langchain/llms";
@@ -7,6 +8,7 @@ import { ConversationChain } from "langchain/chains";
 type Data = {
   name: string;
   url: string;
+  imgDescription: string;
 };
 
 export default async function handler(
@@ -32,7 +34,7 @@ export default async function handler(
   });
   const midJourney = await chain.call({
     input:
-      "the same Human speaks: Take your first answer and turn your name into a retro-sci-fi painting. Reply with purely the description of this painting, without explaining what you did. Thank you! <3",
+      "the same Human speaks: Take your first answer and turn the meaning of your name into a retro-sci-fi painting. Reply in English with purely the description of this painting, without explaining what you did or what it is. Thank you! <3",
   });
   const protocol = req.headers["x-forwarded-proto"] || "http";
   const host = req.headers.host;
@@ -47,5 +49,9 @@ export default async function handler(
   });
   const imgURL = await imgURLResponse.json();
   console.log(imgURL.url);
-  res.status(200).json({ name: res4.response.trim(), url: imgURL.url });
+  res.status(200).json({
+    name: res4.response.trim(),
+    url: imgURL.url,
+    imgDescription: midJourney.response.trim(),
+  });
 }
