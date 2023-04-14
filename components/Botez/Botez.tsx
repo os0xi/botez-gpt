@@ -1,9 +1,41 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { toBlob } from "html-to-image";
 import Image from "next/image";
 // type Props = {};
 
 function Botez() {
+  const handleShare = async () => {
+    if (imageRef.current === null) {
+      return;
+    }
+    const newFile = await toBlob(imageRef.current);
+    if (newFile === null) {
+      return;
+    }
+    const data = {
+      title: "MDN",
+      text: "Learn web development on MDN!",
+      url: "https://developer.mozilla.org",
+      files: [
+        new File([newFile], "nuzlocke.png", {
+          type: newFile.type,
+        }),
+      ],
+    };
+    if (data === null) {
+      return;
+    }
+    try {
+      if (!navigator.canShare(data)) {
+        console.error("Can't share");
+      }
+      await navigator.share(data);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+  const imageRef = useRef(null);
   const [aiName, setAiName] = useState("");
   const [aiPicture, setAiPicture] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -39,7 +71,7 @@ function Botez() {
       </div>
 
       {aiName !== "" && aiPicture !== null ? (
-        <div className="flex flex-col">
+        <div className="flex flex-col" ref={imageRef}>
           {aiPicture && (
             <div className="w-full relative aspect-square self-center rounded-lg animate-pulse">
               <Image
@@ -57,7 +89,21 @@ function Botez() {
       ) : (
         <></>
       )}
-      <div className="flex justify-center text-white font-bold my-4 self-end mr-2">
+      <div className="flex justify-center text-white font-bold my-4 self-end mr-2 gap-3">
+        {aiName && (
+          <button
+            className="disabled:bg-green-50  bg-transparent
+          animate-pulse px-6 py-2 rounded-sm text-slate-200 self-end"
+            onClick={handleShare}
+          >
+            {loading && (
+              <div className="animate-spin text-black viewBox='0 0 24 24'">
+                ߷
+              </div>
+            )}
+            #️⃣ share
+          </button>
+        )}
         <button
           disabled={loading}
           className="disabled:bg-green-50  bg-clip-border bg-gradient-to-r from-teal-400 to-blue-400 
