@@ -89,7 +89,7 @@ function Botez() {
           <div className={`text-yellow-500 text-sm p-4  opacity-80 italic bg-gray-900 rounded-lg my-2 ${loading?"animate-pulse":''}`}>
             {aiImageDescription}
           </div>
-          <div className="text-white text-lg px-1 opacity-80">{aiName}</div>{" "}
+          <div className="text-white text-lg p-4 bg-gray-900 rounded opacity-80">{aiName}</div>{" "}
         </div>
       ) : (
         <></>
