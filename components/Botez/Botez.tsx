@@ -62,7 +62,7 @@ function Botez() {
   // }
   console.log();
   return (
-    <div className="flex items-start justify-start flex-col gap-2 bg-transparent max-w-2xl p-2">
+    <div className="flex items-start justify-start flex-col gap-2 bg-transparent max-w-4xl p-2">
       {!aiName && <div className="text-8xl dark:text-white mb-2">Boteaza</div>}
       {aiName && (
         <div className="text-5xl text-white opacity-90  mb-2 font-bold">
@@ -89,7 +89,7 @@ function Botez() {
           <div className={`text-yellow-500 text-sm p-4  opacity-80 italic bg-gray-900 rounded-lg my-2 ${loading?"animate-pulse":''}`}>
             {aiImageDescription}
           </div>
-          <div className="text-white text-lg p-4 bg-gray-900 rounded opacity-80">{aiName}</div>{" "}
+          <div className={`text-white text-lg p-4 bg-gray-900 rounded opacity-80`}>{aiName}</div>{" "}
         </div>
       ) : (
         <></>
