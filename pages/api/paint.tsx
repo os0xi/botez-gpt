@@ -12,11 +12,10 @@ export default async function handler(
     auth: process.env.REPLICATE_API_TOKEN,
   });
   const model =
-    "tstramer/midjourney-diffusion:436b051ebd8f68d23e83d22de5e198e0995357afef113768c20f0b6fcef23c8b";
+    "ai-forever/kandinsky-2:601eea49d49003e6ea75a11527209c4f510a93e2112c969d548fbb45b9c4f19f";
   const input = {
     prompt: req.body.key.response,
-    // negative_prompt:
-      // "ugly, tiling, poorly drawn hands, poorly drawn feet, poorly drawn face, out of frame, extra limbs...,blurry image, watermark, messy",
+    num_inference_steps: 100,
   };
   const output: any = await replicate.run(model, { input });
 
