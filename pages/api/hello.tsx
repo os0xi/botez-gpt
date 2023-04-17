@@ -34,7 +34,7 @@ export default async function handler(
   });
   const midJourney = await chain.call({
     input:
-      "the same Human speaks: Take your first answer and turn the meaning of your name into a retro-sci-fi painting. Reply in English with purely the description of this painting, without explaining what you did or what it is. Thank you! <3",
+      "the same Human speaks: Take your first answer and turn the meaning of your name into an visual scene . Reply in English with purely the description of this image, without explaining what you did or what it is.Use maximum 30 words. Add that it's a portrait describe the style.Thank you! <3",
   });
   const protocol = req.headers["x-forwarded-proto"] || "http";
   const host = req.headers.host;

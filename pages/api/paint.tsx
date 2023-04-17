@@ -12,10 +12,11 @@ export default async function handler(
     auth: process.env.REPLICATE_API_TOKEN,
   });
   const model =
-    "ai-forever/kandinsky-2:601eea49d49003e6ea75a11527209c4f510a93e2112c969d548fbb45b9c4f19f";
+    "prompthero/openjourney:9936c2001faa2194a261c01381f90e65261879985476014a0a37a334593a05eb";
   const input = {
     prompt: req.body.key.response,
-    num_inference_steps: 100,
+    guidance_scale: 15,
+    num_inference_steps: 70,
   };
   const output: any = await replicate.run(model, { input });
 
